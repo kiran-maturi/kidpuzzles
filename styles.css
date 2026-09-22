@@ -1,0 +1,313 @@
+/* Puzzle Play — one stylesheet, no framework.
+ *
+ * Two things here are load-bearing rather than cosmetic:
+ *   1. the pointer-events rules, which make a piece grabbable on its painted
+ *      shape only, so overlapping pieces in the tray behave like real ones;
+ *   2. the .eink block, which flattens colour, kills animation and thickens
+ *      outlines for a grayscale, slow-refresh screen.
+ */
+
+:root {
+  --paper: #fff7e8;
+  --ink: #33261a;
+  --frame: #ffffff;
+  --shadow: rgba(80, 52, 20, 0.22);
+  --accent: #f4763b;
+  --accent-dark: #d2561e;
+  --tray: #ffeccd;
+  --tap: 52px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Baloo 2", "Comic Sans MS", "Trebuchet MS", system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* ---- screens ------------------------------------------------------------ */
+
+.screen { display: none; height: 100%; flex-direction: column; }
+#home { display: flex; overflow-y: auto; }
+body.playing #home { display: none; }
+body.playing #play { display: flex; }
+
+/* ---- buttons ------------------------------------------------------------ */
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  touch-action: manipulation;
+}
+
+.icon-btn {
+  min-width: var(--tap);
+  min-height: var(--tap);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.icon-btn:active { transform: translateY(2px); box-shadow: none; }
+.icon-btn.on { background: #ffe0b2; outline: 3px solid var(--accent); }
+.eink-only { display: none; }
+
+.big-btn {
+  min-height: 56px;
+  padding: 0 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 3px 0 var(--shadow);
+}
+.big-btn.primary { background: var(--accent); color: #fff; box-shadow: 0 3px 0 var(--accent-dark); }
+.big-btn:active { transform: translateY(3px); box-shadow: none; }
+
+/* ---- home -------------------------------------------------------------- */
+
+.home-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 4px;
+}
+.home-bar h1 { margin: 0; font-size: clamp(1.4rem, 5vw, 2rem); }
+.home-tools { margin-left: auto; display: flex; gap: 8px; }
+.hint-text { margin: 4px 16px 12px; opacity: 0.75; }
+
+.levels {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 14px;
+  overflow-x: auto;
+}
+.level {
+  flex: 1 0 auto;
+  min-width: 96px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 3px 0 var(--shadow);
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.level[aria-checked="true"] { background: #ffe0b2; outline: 4px solid var(--accent); }
+.level-emoji { font-size: 1.7rem; }
+.level-pieces { font-size: 1.3rem; font-weight: 800; }
+.level-ages { font-size: 0.78rem; opacity: 0.7; }
+
+.picker {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+  gap: 12px;
+  padding: 0 16px 16px;
+  align-content: start;
+}
+.card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--shadow);
+  display: grid;
+  place-content: center;
+  gap: 4px;
+}
+.card:active { transform: translateY(3px); box-shadow: none; }
+.card-emoji { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+.card-name { font-size: 0.9rem; font-weight: 700; }
+.card-stars { position: absolute; top: 8px; right: 10px; color: #f9a825; font-size: 0.85rem; }
+
+.home-foot { padding: 0 16px 18px; font-size: 0.8rem; opacity: 0.55; }
+
+/* ---- play bar ---------------------------------------------------------- */
+
+.play-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+}
+.play-bar h2 { margin: 0; font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.count {
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.spacer { flex: 1; }
+
+/* ---- stage: board + tray + pieces -------------------------------------- */
+
+#stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  /* Without this, a touch-drag scrolls the page instead of moving a piece. */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#board, #tray, #layer { position: absolute; }
+
+#board {
+  background: var(--frame);
+  border-radius: 10px;
+  box-shadow: 0 0 0 5px #fff, 0 4px 14px var(--shadow);
+  overflow: hidden;
+}
+
+#guide, #guide svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.guide-picture { opacity: 0; transition: opacity 0.2s; }
+#board.hint .guide-picture { opacity: 0.2; }
+.guide-lines path {
+  fill: none;
+  stroke: rgba(70, 50, 30, 0.22);
+  stroke-width: 1.6;
+  stroke-dasharray: 7 7;
+}
+#board.solved .guide-lines { display: none; }
+/* Clipped SVG edges leave hairline seams between neighbouring pieces. Once the
+   picture is complete, the full-strength guide underneath fills them in, so the
+   finished picture reads as one clean image. */
+#board.solved .guide-picture { opacity: 1; }
+#board.solved { box-shadow: 0 0 0 5px #fff, 0 0 0 10px var(--accent), 0 4px 18px var(--shadow); }
+
+#tray {
+  background: var(--tray);
+  border: 3px dashed rgba(120, 80, 40, 0.28);
+  border-radius: 22px;
+}
+
+#layer { inset: 0; pointer-events: none; }
+
+.piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  pointer-events: none;
+}
+.piece-art {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 2px rgba(60, 40, 20, 0.45));
+  transition: transform 0.08s;
+}
+/* The clipped artwork is the only hit target, so a piece is grabbable exactly
+   where it is drawn — including the knobs, and not in the empty corners. */
+.piece-art > g { pointer-events: auto; }
+.piece-edge { fill: none; stroke: rgba(255, 255, 255, 0.8); stroke-width: 2; }
+
+.piece:focus-visible { outline: none; }
+.piece:focus-visible .piece-art { filter: drop-shadow(0 0 0 #fff) drop-shadow(0 0 6px var(--accent)); }
+
+.piece.dragging .piece-art {
+  transform: scale(1.06);
+  filter: drop-shadow(0 6px 8px rgba(60, 40, 20, 0.5));
+}
+.piece.placed .piece-art { filter: none; }
+.piece.placed .piece-edge { stroke: transparent; }
+.piece.placed .piece-art > g { pointer-events: none; }
+
+/* ---- celebration ------------------------------------------------------- */
+
+#win {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 50;
+  /* No scrim: only the card itself is interactive, the picture stays clear. */
+  pointer-events: none;
+}
+#win[hidden] { display: none; }
+.win-card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 16px;
+  text-align: center;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 22px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.win-title { margin: 0; font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 800; }
+.win-buttons { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 16px;
+  border-radius: 2px;
+  animation: fall 2.2s linear forwards;
+}
+@keyframes fall {
+  to { transform: translateY(105vh) rotate(540deg); }
+}
+
+/* ---- E Ink ------------------------------------------------------------- */
+
+body.eink {
+  --paper: #ffffff;
+  --tray: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.55);
+  --accent: #000000;
+  --accent-dark: #000000;
+}
+/* Colour is noise on a grayscale panel; contrast is what is left to spend. */
+body.eink #stage, body.eink .picker, body.eink .win-art { filter: grayscale(1) contrast(1.35); }
+body.eink .icon-btn, body.eink .big-btn, body.eink .card, body.eink .level { border: 2px solid #000; box-shadow: none; }
+body.eink .big-btn.primary { background: #000; color: #fff; }
+body.eink #board { box-shadow: none; border: 3px solid #000; }
+body.eink #tray { border: 3px dashed #000; }
+body.eink .piece-art { filter: none; }
+body.eink .piece-edge { stroke: #000; stroke-width: 2.6; }
+body.eink .piece.placed .piece-edge { stroke: rgba(0, 0, 0, 0.35); }
+body.eink .guide-lines path { stroke: #000; stroke-width: 1.4; }
+body.eink .eink-only { display: grid; }
+/* Animation smears on E Ink and leaves ghosts behind. */
+body.eink *, body.eink *::before, body.eink *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+.eink-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #fff;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

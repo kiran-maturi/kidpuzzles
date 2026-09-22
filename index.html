@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#fff7e8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="Drag-and-drop jigsaw puzzles for children aged 3 to 10. Works offline, no ads, no accounts.">
+<title>Puzzle Play</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================== HOME ============================== -->
+<section id="home" class="screen">
+  <header class="home-bar">
+    <h1>🧩 Puzzle Play</h1>
+    <div class="home-tools">
+      <button id="btn-sound" class="icon-btn" aria-pressed="true" aria-label="Sound on">🔊</button>
+      <button id="btn-eink" class="icon-btn" aria-pressed="false" aria-label="E Ink mode" title="E Ink mode">🖤</button>
+    </div>
+  </header>
+
+  <p class="hint-text">Pick how many pieces, then pick a picture.</p>
+
+  <div id="levels" class="levels" role="radiogroup" aria-label="How many pieces"></div>
+
+  <div id="picker" class="picker"></div>
+
+  <footer class="home-foot">
+    <span>Drag the pieces into the frame. Nothing to lose, no timer.</span>
+  </footer>
+</section>
+
+<!-- ============================== PLAY ============================== -->
+<section id="play" class="screen">
+  <header class="play-bar">
+    <button id="btn-back" class="icon-btn" aria-label="Back to puzzles">⬅</button>
+    <h2 id="play-title">Puzzle</h2>
+    <span id="count" class="count" role="status" aria-live="polite">0/9</span>
+    <span class="spacer"></span>
+    <button id="btn-hint" class="icon-btn" aria-pressed="true" aria-label="Show picture guide" title="Picture guide">🖼</button>
+    <button id="btn-shuffle" class="icon-btn" aria-label="Shuffle loose pieces" title="Shuffle pieces">🔄</button>
+    <button id="btn-flash" class="icon-btn eink-only" aria-label="Refresh screen" title="Refresh screen">⟳</button>
+  </header>
+
+  <!-- Board, tray and pieces all live in one coordinate space, so a piece can
+       be dragged between them without changing parents. -->
+  <div id="stage">
+    <div id="board"><div id="guide"></div></div>
+    <div id="tray"></div>
+    <div id="layer"></div>
+
+    <!-- The celebration sits in the emptied tray, never over the board: the
+         finished picture is the reward and must stay in full view. -->
+    <div id="win" hidden>
+      <div id="win-card" class="win-card">
+        <p class="win-title">🎉 You did it!</p>
+        <div class="win-buttons">
+          <button id="win-again" class="big-btn">🔄 Again</button>
+          <button id="win-next" class="big-btn primary">➡️ Next picture</button>
+          <button id="win-home" class="big-btn">🏠 All puzzles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

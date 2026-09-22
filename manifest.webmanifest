@@ -1,0 +1,16 @@
+{
+  "name": "Puzzle Play",
+  "short_name": "Puzzles",
+  "description": "Drag-and-drop jigsaw puzzles for children aged 3 to 10. Works offline, no ads, no accounts.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff7e8",
+  "theme_color": "#fff7e8",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
