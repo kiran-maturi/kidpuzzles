@@ -79,15 +79,16 @@ during development just serves yesterday's JavaScript.
 
 ## Deploying
 
-The repo root is the site, served straight from the `main` branch
-(**Settings → Pages → Source: Deploy from a branch → main / (root)**). There is
-nothing to build, so deploying is just:
+The repo root is the site — plain HTML, CSS and ES modules, with no build step.
+`.github/workflows/pages.yml` uploads it and publishes on every push to `main`.
+Pages has to be told once to take its content from Actions:
+**Settings → Pages → Source: GitHub Actions**. After that, deploying is just:
 
 ```bash
 git add -A && git commit -m "..." && git push
 ```
 
-`.nojekyll` keeps Pages from running the files through Jekyll.
+`.nojekyll` keeps the files from being run through Jekyll.
 
 When any file changes, bump `CACHE` in [`sw.js`](sw.js) — otherwise tablets keep
 serving the previous build from disk.
