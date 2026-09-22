@@ -3,7 +3,7 @@
  * Bump CACHE when anything ships, or tablets will keep serving the old build
  * from disk. Install precaches the shell; activate drops older caches. */
 
-const CACHE = 'kidpuzzles-v1';
+const CACHE = 'kidpuzzles-v2';
 const ASSETS = [
   '.',
   'index.html',

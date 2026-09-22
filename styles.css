@@ -14,7 +14,7 @@
   --shadow: rgba(80, 52, 20, 0.22);
   --accent: #f4763b;
   --accent-dark: #d2561e;
-  --tray: #ffeccd;
+  --tray: #ffe6bd;
   --tap: 52px;
 }
 
@@ -215,7 +215,9 @@ button {
   height: 100%;
   overflow: visible;
   pointer-events: none;
-  filter: drop-shadow(0 2px 2px rgba(60, 40, 20, 0.45));
+  /* The tight first shadow acts as a thin dark outline, so a piece still reads
+     as a separate object when its picture happens to match the tray colour. */
+  filter: drop-shadow(0 0 1px rgba(60, 40, 20, 0.55)) drop-shadow(0 2px 2px rgba(60, 40, 20, 0.4));
   transition: transform 0.08s;
 }
 /* The clipped artwork is the only hit target, so a piece is grabbable exactly
@@ -228,7 +230,7 @@ button {
 
 .piece.dragging .piece-art {
   transform: scale(1.06);
-  filter: drop-shadow(0 6px 8px rgba(60, 40, 20, 0.5));
+  filter: drop-shadow(0 0 1px rgba(60, 40, 20, 0.55)) drop-shadow(0 6px 8px rgba(60, 40, 20, 0.5));
 }
 .piece.placed .piece-art { filter: none; }
 .piece.placed .piece-edge { stroke: transparent; }
