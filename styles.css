@@ -82,6 +82,11 @@ button {
 
 /* ---- home -------------------------------------------------------------- */
 
+/* #home is a flex column and .picker is flex:1 with the default min-height:auto,
+ * so once the grid is 100 cards tall it refuses to shrink and squeezes every
+ * shrinkable sibling to nothing. Everything around the grid opts out. */
+.home-bar, .hint-text, .levels, .cats, .home-foot { flex: 0 0 auto; }
+
 .home-bar {
   display: flex;
   align-items: center;
@@ -113,6 +118,30 @@ button {
 .level-emoji { font-size: 1.7rem; }
 .level-pieces { font-size: 1.3rem; font-weight: 800; }
 .level-ages { font-size: 0.78rem; opacity: 0.7; }
+
+/* Same shape as .levels: one horizontally scrolling row of big tap targets. */
+.cats {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 14px;
+  overflow-x: auto;
+}
+.cat {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 46px;
+  padding: 8px 16px;
+  border-radius: 23px;
+  background: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 3px 0 var(--shadow);
+}
+.cat[aria-checked="true"] { background: #ffe0b2; outline: 4px solid var(--accent); }
+.cat:active { transform: translateY(3px); box-shadow: none; }
+.cat-emoji { font-size: 1.25rem; line-height: 1; }
 
 .picker {
   flex: 1;
@@ -287,7 +316,7 @@ body.eink {
 }
 /* Colour is noise on a grayscale panel; contrast is what is left to spend. */
 body.eink #stage, body.eink .picker, body.eink .win-art { filter: grayscale(1) contrast(1.35); }
-body.eink .icon-btn, body.eink .big-btn, body.eink .card, body.eink .level { border: 2px solid #000; box-shadow: none; }
+body.eink .icon-btn, body.eink .big-btn, body.eink .card, body.eink .level, body.eink .cat { border: 2px solid #000; box-shadow: none; }
 body.eink .big-btn.primary { background: #000; color: #fff; }
 body.eink #board { box-shadow: none; border: 3px solid #000; }
 body.eink #tray { border: 3px dashed #000; }

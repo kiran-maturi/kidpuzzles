@@ -4,7 +4,7 @@
  * shape as well as a word, because a lot of the audience cannot read yet.
  */
 
-import { SCENES, sceneById } from './scenes.js';
+import { SCENES, CATEGORIES, sceneById } from './scenes.js';
 import * as game from './game.js';
 import * as audio from './audio.js';
 import * as eink from './eink.js';
@@ -18,6 +18,7 @@ const LEVELS = [
 
 const STARS_KEY = 'kidpuzzles.stars';
 const LEVEL_KEY = 'kidpuzzles.level';
+const CAT_KEY = 'kidpuzzles.cat';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -26,6 +27,7 @@ const el = {
   home: $('#home'),
   play: $('#play'),
   levels: $('#levels'),
+  cats: $('#cats'),
   picker: $('#picker'),
   stage: $('#stage'),
   board: $('#board'),
@@ -49,7 +51,16 @@ const el = {
 
 let level = Number(localStorage.getItem(LEVEL_KEY)) || 3;
 if (!LEVELS.some((l) => l.grid === level)) level = 3;
+
+let cat = localStorage.getItem(CAT_KEY) || 'all';
+if (!CATEGORIES.some((c) => c.id === cat)) cat = 'all';
+
 let current = null;
+
+/* The pictures the picker is showing — and the ring that ➡️ Next walks round,
+ * so finishing a cat offers another animal rather than whatever comes next in
+ * the file. */
+const visibleScenes = () => (cat === 'all' ? SCENES : SCENES.filter((s) => s.cat === cat));
 
 /* ---- stars -------------------------------------------------------------- */
 
@@ -86,8 +97,17 @@ function renderLevels() {
   ).join('');
 }
 
+function renderCats() {
+  el.cats.innerHTML = CATEGORIES.map(
+    (c) => `<button class="cat" data-cat="${c.id}" role="radio"
+        aria-checked="${c.id === cat}" aria-label="${c.name} puzzles">
+      <span class="cat-emoji">${c.emoji}</span><span>${c.name}</span>
+    </button>`
+  ).join('');
+}
+
 function renderPicker() {
-  el.picker.innerHTML = SCENES.map((s) => {
+  el.picker.innerHTML = visibleScenes().map((s) => {
     const n = starsFor(s.id);
     const stars = n ? `<span class="card-stars">${'★'.repeat(Math.min(n, 3))}${n > 3 ? ` ${n}` : ''}</span>` : '';
     return `<button class="card" data-scene="${s.id}" aria-label="${s.name} puzzle">
@@ -167,8 +187,11 @@ function confetti() {
 
 function nextScene() {
   if (!current) return;
-  const i = SCENES.findIndex((s) => s.id === current.scene.id);
-  play(SCENES[(i + 1) % SCENES.length].id);
+  // Stay inside the chosen category, unless the current picture is not in it.
+  const list = visibleScenes();
+  const pool = list.some((s) => s.id === current.scene.id) ? list : SCENES;
+  const i = pool.findIndex((s) => s.id === current.scene.id);
+  play(pool[(i + 1) % pool.length].id);
 }
 
 /* ---- settings ----------------------------------------------------------- */
@@ -196,6 +219,17 @@ el.levels.addEventListener('click', (e) => {
   audio.wake();
   audio.pick();
   renderLevels();
+});
+
+el.cats.addEventListener('click', (e) => {
+  const btn = e.target.closest('.cat');
+  if (!btn) return;
+  cat = btn.dataset.cat;
+  localStorage.setItem(CAT_KEY, cat);
+  audio.wake();
+  audio.pick();
+  renderCats();
+  renderPicker();
 });
 
 el.picker.addEventListener('click', (e) => {
@@ -243,6 +277,7 @@ eink.apply(eink.getPref());
 syncEink();
 syncSound();
 renderLevels();
+renderCats();
 renderPicker();
 game.init(
   { stage: el.stage, board: el.board, guide: el.guide, tray: el.tray, layer: el.layer },

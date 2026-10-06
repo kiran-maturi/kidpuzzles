@@ -4,7 +4,7 @@ Drag-and-drop jigsaw puzzles for children aged 3 to 10. Pick how many pieces,
 pick a picture, drag the pieces into the frame, and the picture appears.
 
 No build step, no dependencies, no image files, no accounts, no ads, no timer
-and no way to lose. The whole thing is about 75 KB of hand-written code and
+and no way to lose. The whole thing is about 200 KB of hand-written code and
 works offline once loaded.
 
 **Live: https://kiran-maturi.github.io/kidpuzzles/**
@@ -18,10 +18,11 @@ works offline once loaded.
 | **16 pieces** | ages 7–8 |
 | **25 pieces** | ages 9–10 |
 
-Twenty-four pictures — rocket, cat, fish, house, truck, butterfly, rainbow,
-apple tree, sailboat, dinosaur, train, flower, dog, owl, penguin, frog, bee,
-turtle, elephant, lion, hot-air balloon, aeroplane, digger, robot. Finishing one
-earns a star, kept in `localStorage`, shown on its card on the home screen.
+A hundred pictures, filtered by a row of category chips — 🐾 Animals, 🐦 Birds,
+🐛 Bugs, 🐠 Sea, 🚚 Things that go, 🌳 Nature, 🍎 Food, 🧸 Things, or 🌈 All.
+A hundred cards at once is more than a three-year-old can scan, and the chosen
+chip is remembered. Finishing a picture earns a star, kept in `localStorage`,
+shown on its card on the home screen.
 
 Choices that come from the age range rather than from convenience:
 
@@ -33,6 +34,8 @@ Choices that come from the age range rather than from convenience:
 - Under 7s get the picture faintly behind the frame as a guide (🖼 toggles it).
 - Nothing is timed or scored, and the celebration lands in the empty tray so
   the finished picture — the actual reward — stays in full view.
+- ➡️ Next picture stays inside the chosen category, so finishing a cat offers
+  another animal rather than whatever happens to come next in the file.
 - Every control carries an emoji as well as a word, because much of the
   audience cannot read yet.
 
@@ -41,8 +44,9 @@ Keyboard play works too: <kbd>Tab</kbd> to a piece, arrow keys to move it
 
 ## How it works
 
-There are no image files. Each picture is hand-written SVG in
+There are no image files. All hundred pictures are hand-written SVG in
 [`js/scenes.js`](js/scenes.js), drawn in a 400×400 space with flat bold shapes.
+Each carries a `cat` field naming the chip it appears under.
 
 The cut ([`js/pieces.js`](js/pieces.js)) is the interesting part. Every interior
 edge gets one knob, and the two pieces sharing that edge draw the *same* curve —
@@ -99,7 +103,7 @@ serving the previous build from disk.
 ```
 index.html                 markup for both screens
 styles.css                 all styling, including the E Ink block
-js/scenes.js               the twenty-four pictures, as SVG
+js/scenes.js               the hundred pictures as SVG, plus CATEGORIES
 js/pieces.js               jigsaw cutting: knobs, clip paths, piece markup
 js/game.js                 board/tray layout, snapping, progress
 js/drag.js                 pointer dragging
