@@ -4,7 +4,7 @@ Drag-and-drop jigsaw puzzles for children aged 3 to 10. Pick how many pieces,
 pick a picture, drag the pieces into the frame, and the picture appears.
 
 No build step, no dependencies, no image files, no accounts, no ads, no timer
-and no way to lose. The whole thing is about 55 KB of hand-written code and
+and no way to lose. The whole thing is about 75 KB of hand-written code and
 works offline once loaded.
 
 **Live: https://kiran-maturi.github.io/kidpuzzles/**
@@ -18,9 +18,10 @@ works offline once loaded.
 | **16 pieces** | ages 7–8 |
 | **25 pieces** | ages 9–10 |
 
-Twelve pictures — rocket, cat, fish, house, truck, butterfly, rainbow, apple
-tree, sailboat, dinosaur, train, flower. Finishing one earns a star, kept in
-`localStorage`, shown on its card on the home screen.
+Twenty-four pictures — rocket, cat, fish, house, truck, butterfly, rainbow,
+apple tree, sailboat, dinosaur, train, flower, dog, owl, penguin, frog, bee,
+turtle, elephant, lion, hot-air balloon, aeroplane, digger, robot. Finishing one
+earns a star, kept in `localStorage`, shown on its card on the home screen.
 
 Choices that come from the age range rather than from convenience:
 
@@ -98,7 +99,7 @@ serving the previous build from disk.
 ```
 index.html                 markup for both screens
 styles.css                 all styling, including the E Ink block
-js/scenes.js               the twelve pictures, as SVG
+js/scenes.js               the twenty-four pictures, as SVG
 js/pieces.js               jigsaw cutting: knobs, clip paths, piece markup
 js/game.js                 board/tray layout, snapping, progress
 js/drag.js                 pointer dragging

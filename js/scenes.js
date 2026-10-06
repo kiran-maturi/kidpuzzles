@@ -265,6 +265,356 @@ export const SCENES = [
       <circle cx="66" cy="352" r="14" fill="#ef9a9a"/>
       <circle cx="334" cy="360" r="14" fill="#fff59d"/>
     `
+  },
+  {
+    id: 'dog', name: 'Dog', emoji: '🐶',
+    svg: `
+      <rect width="400" height="400" fill="#e3f2cf"/>
+      <circle cx="54" cy="56" r="30" fill="#ffd54f"/>
+      <ellipse cx="318" cy="68" rx="46" ry="24" fill="#ffffff"/>
+      <rect y="316" width="400" height="84" fill="#8bc34a"/>
+      <path d="M288 296c54 2 54-48 12-60" fill="none" stroke="#8d6e63" stroke-width="26" stroke-linecap="round"/>
+      <ellipse cx="200" cy="272" rx="98" ry="68" fill="#a1887f"/>
+      <ellipse cx="152" cy="330" rx="36" ry="20" fill="#efebe9"/>
+      <ellipse cx="248" cy="330" rx="36" ry="20" fill="#efebe9"/>
+      <ellipse cx="200" cy="292" rx="58" ry="46" fill="#efebe9"/>
+      <circle cx="200" cy="158" r="84" fill="#bcaaa4"/>
+      <ellipse cx="122" cy="168" rx="30" ry="58" fill="#8d6e63"/>
+      <ellipse cx="278" cy="168" rx="30" ry="58" fill="#8d6e63"/>
+      <circle cx="236" cy="140" r="38" fill="#8d6e63"/>
+      <rect x="148" y="236" width="104" height="24" rx="12" fill="#e8473c"/>
+      <circle cx="200" cy="268" r="14" fill="#ffd54f"/>
+      <ellipse cx="200" cy="196" rx="48" ry="34" fill="#f5f5f5"/>
+      <ellipse cx="200" cy="180" rx="20" ry="14" fill="#3e2723"/>
+      <path d="M200 198v10M200 208c-8 10-20 8-24 0M200 208c8 10 20 8 24 0" fill="none" stroke="#5d4037" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="166" cy="140" r="15" fill="#2e2a26"/>
+      <circle cx="236" cy="140" r="15" fill="#2e2a26"/>
+      <circle cx="171" cy="134" r="5" fill="#ffffff"/>
+      <circle cx="241" cy="134" r="5" fill="#ffffff"/>
+      <ellipse cx="62" cy="354" rx="30" ry="12" fill="#fff8e1"/>
+      <circle cx="36" cy="346" r="13" fill="#fff8e1"/>
+      <circle cx="36" cy="362" r="13" fill="#fff8e1"/>
+      <circle cx="88" cy="346" r="13" fill="#fff8e1"/>
+      <circle cx="88" cy="362" r="13" fill="#fff8e1"/>
+    `
+  },
+  {
+    id: 'owl', name: 'Owl', emoji: '🦉',
+    svg: `
+      <rect width="400" height="400" fill="#1b2a63"/>
+      <circle cx="328" cy="66" r="40" fill="#fff9c4"/>
+      <circle cx="342" cy="54" r="10" fill="#efe1a6"/>
+      <circle cx="314" cy="80" r="8" fill="#efe1a6"/>
+      <circle cx="52" cy="48" r="8" fill="#ffe082"/>
+      <circle cx="112" cy="96" r="6" fill="#ffe082"/>
+      <circle cx="42" cy="156" r="7" fill="#ffe082"/>
+      <circle cx="366" cy="184" r="6" fill="#ffe082"/>
+      <circle cx="68" cy="256" r="6" fill="#ffe082"/>
+      <circle cx="348" cy="290" r="7" fill="#ffe082"/>
+      <rect y="362" width="400" height="38" fill="#121c42"/>
+      <rect y="336" width="400" height="28" rx="14" fill="#6d4c41"/>
+      <path d="M112 134l16-50 32 42z" fill="#8d6e63"/>
+      <path d="M288 134l-16-50-32 42z" fill="#8d6e63"/>
+      <ellipse cx="200" cy="228" rx="104" ry="112" fill="#8d6e63"/>
+      <ellipse cx="114" cy="248" rx="32" ry="74" fill="#6d4c41"/>
+      <ellipse cx="286" cy="248" rx="32" ry="74" fill="#6d4c41"/>
+      <ellipse cx="200" cy="262" rx="62" ry="74" fill="#d7ccc8"/>
+      <path d="M172 232h56M164 266h72M174 300h52" fill="none" stroke="#bcaaa4" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="158" cy="172" r="46" fill="#fff8e1"/>
+      <circle cx="242" cy="172" r="46" fill="#fff8e1"/>
+      <circle cx="158" cy="172" r="27" fill="#ffb300"/>
+      <circle cx="242" cy="172" r="27" fill="#ffb300"/>
+      <circle cx="158" cy="172" r="14" fill="#2e2a26"/>
+      <circle cx="242" cy="172" r="14" fill="#2e2a26"/>
+      <circle cx="163" cy="166" r="5" fill="#ffffff"/>
+      <circle cx="247" cy="166" r="5" fill="#ffffff"/>
+      <path d="M200 192l-16 28h32z" fill="#ff8f00"/>
+      <path d="M160 334v24M180 334v24M220 334v24M240 334v24" fill="none" stroke="#ff8f00" stroke-width="13" stroke-linecap="round"/>
+    `
+  },
+  {
+    id: 'penguin', name: 'Penguin', emoji: '🐧',
+    svg: `
+      <rect width="400" height="400" fill="#b3e5fc"/>
+      <circle cx="56" cy="54" r="28" fill="#fff176"/>
+      <ellipse cx="298" cy="58" rx="48" ry="24" fill="#ffffff"/>
+      <ellipse cx="256" cy="70" rx="32" ry="18" fill="#ffffff"/>
+      <path d="M0 298l74-98 66 98z" fill="#d6effc"/>
+      <path d="M272 298l66-90 62 90z" fill="#d6effc"/>
+      <rect y="294" width="400" height="106" fill="#f6fbff"/>
+      <ellipse cx="200" cy="314" rx="152" ry="24" fill="#dff1fb"/>
+      <ellipse cx="200" cy="222" rx="96" ry="106" fill="#2b3a42"/>
+      <circle cx="200" cy="124" r="76" fill="#2b3a42"/>
+      <ellipse cx="200" cy="246" rx="64" ry="82" fill="#fbfbfb"/>
+      <ellipse cx="200" cy="148" rx="52" ry="44" fill="#fbfbfb"/>
+      <ellipse cx="106" cy="232" rx="28" ry="66" fill="#1d282e"/>
+      <ellipse cx="294" cy="232" rx="28" ry="66" fill="#1d282e"/>
+      <ellipse cx="154" cy="336" rx="36" ry="15" fill="#ff9800"/>
+      <ellipse cx="246" cy="336" rx="36" ry="15" fill="#ff9800"/>
+      <circle cx="174" cy="132" r="15" fill="#2e2a26"/>
+      <circle cx="226" cy="132" r="15" fill="#2e2a26"/>
+      <circle cx="179" cy="126" r="5" fill="#ffffff"/>
+      <circle cx="231" cy="126" r="5" fill="#ffffff"/>
+      <path d="M200 148l-28 16 28 20 28-20z" fill="#ff9800"/>
+      <rect x="130" y="188" width="140" height="26" rx="13" fill="#e8473c"/>
+      <rect x="248" y="200" width="28" height="60" rx="14" fill="#c62828"/>
+    `
+  },
+  {
+    id: 'frog', name: 'Frog', emoji: '🐸',
+    svg: `
+      <rect width="400" height="400" fill="#bfe9ff"/>
+      <circle cx="56" cy="54" r="28" fill="#ffd54f"/>
+      <ellipse cx="320" cy="64" rx="44" ry="22" fill="#ffffff"/>
+      <rect y="266" width="400" height="134" fill="#4fc3f7"/>
+      <path d="M0 292c46-16 68 14 112 0s68 14 112 0 66 14 112 0 46 8 64 0v-26H0z" fill="#29b6f6"/>
+      <ellipse cx="200" cy="332" rx="152" ry="46" fill="#66bb6a"/>
+      <path d="M200 332l-56 36 56-4z" fill="#4caf50"/>
+      <ellipse cx="200" cy="252" rx="106" ry="80" fill="#7cb342"/>
+      <ellipse cx="200" cy="278" rx="66" ry="52" fill="#dce775"/>
+      <ellipse cx="98" cy="308" rx="48" ry="23" fill="#558b2f"/>
+      <ellipse cx="302" cy="308" rx="48" ry="23" fill="#558b2f"/>
+      <ellipse cx="200" cy="176" rx="94" ry="70" fill="#8bc34a"/>
+      <circle cx="144" cy="132" r="42" fill="#8bc34a"/>
+      <circle cx="256" cy="132" r="42" fill="#8bc34a"/>
+      <circle cx="144" cy="132" r="28" fill="#ffffff"/>
+      <circle cx="256" cy="132" r="28" fill="#ffffff"/>
+      <circle cx="144" cy="134" r="15" fill="#2e2a26"/>
+      <circle cx="256" cy="134" r="15" fill="#2e2a26"/>
+      <circle cx="149" cy="128" r="5" fill="#ffffff"/>
+      <circle cx="261" cy="128" r="5" fill="#ffffff"/>
+      <path d="M130 202c32 32 108 32 140 0" fill="none" stroke="#33691e" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="166" cy="174" r="8" fill="#33691e"/>
+      <circle cx="234" cy="174" r="8" fill="#33691e"/>
+    `
+  },
+  {
+    id: 'bee', name: 'Bee', emoji: '🐝',
+    svg: `
+      <rect width="400" height="400" fill="#def3ff"/>
+      <circle cx="52" cy="50" r="28" fill="#ffd54f"/>
+      <ellipse cx="312" cy="56" rx="42" ry="20" fill="#ffffff"/>
+      <rect y="330" width="400" height="70" fill="#8bc34a"/>
+      <rect x="48" y="320" width="14" height="60" fill="#558b2f"/>
+      <rect x="338" y="312" width="14" height="68" fill="#558b2f"/>
+      <circle cx="55" cy="316" r="24" fill="#ef5350"/>
+      <circle cx="345" cy="306" r="26" fill="#ec407a"/>
+      <circle cx="55" cy="316" r="9" fill="#ffee58"/>
+      <circle cx="345" cy="306" r="9" fill="#ffee58"/>
+      <ellipse cx="206" cy="232" rx="112" ry="82" fill="#ffca28"/>
+      <rect x="168" y="158" width="34" height="150" rx="17" fill="#3e2723"/>
+      <rect x="238" y="170" width="34" height="126" rx="17" fill="#3e2723"/>
+      <path d="M314 232l50-28v56z" fill="#3e2723"/>
+      <ellipse cx="192" cy="136" rx="68" ry="36" transform="rotate(-24 192 136)" fill="#ffffff" stroke="#64b5f6" stroke-width="8"/>
+      <ellipse cx="266" cy="152" rx="54" ry="30" transform="rotate(-8 266 152)" fill="#ffffff" stroke="#64b5f6" stroke-width="8"/>
+      <circle cx="110" cy="214" r="58" fill="#3e2723"/>
+      <circle cx="92" cy="200" r="21" fill="#ffffff"/>
+      <circle cx="88" cy="202" r="11" fill="#2e2a26"/>
+      <path d="M72 240c22 16 46 12 60-6" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+      <path d="M100 160c-12-30-30-42-50-40M138 158c6-28 24-44 46-42" fill="none" stroke="#3e2723" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="48" cy="118" r="13" fill="#3e2723"/>
+      <circle cx="186" cy="114" r="13" fill="#3e2723"/>
+    `
+  },
+  {
+    id: 'turtle', name: 'Turtle', emoji: '🐢',
+    svg: `
+      <rect width="400" height="400" fill="#9fdcff"/>
+      <circle cx="56" cy="54" r="28" fill="#ffd54f"/>
+      <ellipse cx="312" cy="62" rx="44" ry="22" fill="#ffffff"/>
+      <ellipse cx="268" cy="74" rx="30" ry="16" fill="#ffffff"/>
+      <rect y="284" width="400" height="116" fill="#f3d9a4"/>
+      <ellipse cx="200" cy="302" rx="164" ry="26" fill="#e8c98a"/>
+      <path d="M66 264l-44 20 44 20z" fill="#66bb6a"/>
+      <ellipse cx="104" cy="290" rx="42" ry="26" fill="#66bb6a"/>
+      <ellipse cx="292" cy="290" rx="42" ry="26" fill="#66bb6a"/>
+      <circle cx="330" cy="236" r="44" fill="#7cb342"/>
+      <circle cx="350" cy="222" r="12" fill="#2e2a26"/>
+      <circle cx="354" cy="218" r="4" fill="#ffffff"/>
+      <path d="M344 258c12 4 22 2 28-6" fill="none" stroke="#33691e" stroke-width="8" stroke-linecap="round"/>
+      <path d="M56 274a144 112 0 0 1 288 0z" fill="#a1887f"/>
+      <rect x="46" y="268" width="308" height="28" rx="14" fill="#6d4c41"/>
+      <path d="M200 174l50 28v54l-50 28-50-28v-54z" fill="#6d4c41"/>
+      <circle cx="104" cy="240" r="30" fill="#795548"/>
+      <circle cx="296" cy="240" r="30" fill="#795548"/>
+      <circle cx="152" cy="190" r="22" fill="#795548"/>
+      <circle cx="248" cy="190" r="22" fill="#795548"/>
+      <ellipse cx="58" cy="352" rx="22" ry="12" fill="#e0c084"/>
+      <ellipse cx="342" cy="364" rx="26" ry="13" fill="#e0c084"/>
+    `
+  },
+  {
+    id: 'elephant', name: 'Elephant', emoji: '🐘',
+    svg: `
+      <rect width="400" height="400" fill="#ffe9b8"/>
+      <circle cx="52" cy="52" r="32" fill="#ff8a65"/>
+      <rect y="308" width="400" height="92" fill="#c5e1a5"/>
+      <ellipse cx="200" cy="320" rx="180" ry="24" fill="#aed581"/>
+      <path d="M332 244c30-4 40 16 30 34" fill="none" stroke="#78909c" stroke-width="18" stroke-linecap="round"/>
+      <ellipse cx="222" cy="226" rx="122" ry="92" fill="#90a4ae"/>
+      <rect x="140" y="286" width="58" height="84" rx="20" fill="#78909c"/>
+      <rect x="216" y="290" width="58" height="80" rx="20" fill="#78909c"/>
+      <rect x="290" y="284" width="54" height="86" rx="20" fill="#90a4ae"/>
+      <path d="M80 232c-24 40-22 82 2 100 13 10 27 2 27-11" fill="none" stroke="#b0bec5" stroke-width="44" stroke-linecap="round"/>
+      <circle cx="132" cy="190" r="84" fill="#b0bec5"/>
+      <ellipse cx="190" cy="186" rx="56" ry="70" fill="#90a4ae"/>
+      <ellipse cx="190" cy="186" rx="34" ry="46" fill="#cfd8dc"/>
+      <circle cx="108" cy="168" r="15" fill="#2e2a26"/>
+      <circle cx="113" cy="162" r="5" fill="#ffffff"/>
+      <path d="M138 240c14 10 20 22 16 34" fill="none" stroke="#fffde7" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="152" cy="218" r="9" fill="#90a4ae"/>
+      <circle cx="56" cy="352" r="16" fill="#ef9a9a"/>
+      <circle cx="356" cy="348" r="18" fill="#7cb342"/>
+      <circle cx="326" cy="362" r="14" fill="#7cb342"/>
+    `
+  },
+  {
+    id: 'lion', name: 'Lion', emoji: '🦁',
+    svg: `
+      <rect width="400" height="400" fill="#ffe082"/>
+      <circle cx="338" cy="58" r="34" fill="#ff7043"/>
+      <rect y="314" width="400" height="86" fill="#d7a44b"/>
+      <ellipse cx="200" cy="326" rx="178" ry="24" fill="#c2913c"/>
+      <path d="M340 272c34 4 40 36 18 52" fill="none" stroke="#ffb74d" stroke-width="18" stroke-linecap="round"/>
+      <circle cx="360" cy="328" r="19" fill="#e65100"/>
+      <ellipse cx="244" cy="266" rx="110" ry="72" fill="#ffb74d"/>
+      <ellipse cx="188" cy="328" rx="36" ry="18" fill="#ffcc80"/>
+      <ellipse cx="288" cy="328" rx="36" ry="18" fill="#ffcc80"/>
+      <circle cx="250" cy="196" r="26" fill="#e65100"/>
+      <circle cx="79" cy="125" r="28" fill="#ef6c00"/>
+      <circle cx="150" cy="96" r="28" fill="#ef6c00"/>
+      <circle cx="221" cy="125" r="28" fill="#ef6c00"/>
+      <circle cx="250" cy="196" r="28" fill="#ef6c00"/>
+      <circle cx="221" cy="267" r="28" fill="#ef6c00"/>
+      <circle cx="150" cy="296" r="28" fill="#ef6c00"/>
+      <circle cx="79" cy="267" r="28" fill="#ef6c00"/>
+      <circle cx="50" cy="196" r="28" fill="#ef6c00"/>
+      <circle cx="150" cy="196" r="102" fill="#e65100"/>
+      <circle cx="96" cy="136" r="26" fill="#ffb74d"/>
+      <circle cx="204" cy="136" r="26" fill="#ffb74d"/>
+      <circle cx="96" cy="136" r="13" fill="#ef9a9a"/>
+      <circle cx="204" cy="136" r="13" fill="#ef9a9a"/>
+      <circle cx="150" cy="196" r="72" fill="#ffb74d"/>
+      <ellipse cx="150" cy="226" rx="48" ry="34" fill="#fff3e0"/>
+      <path d="M150 214l-16 14h32z" fill="#8d6e63"/>
+      <path d="M150 230c-6 12-18 12-24 2M150 230c6 12 18 12 24 2" fill="none" stroke="#6d4c41" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="124" cy="182" r="14" fill="#2e2a26"/>
+      <circle cx="176" cy="182" r="14" fill="#2e2a26"/>
+      <circle cx="129" cy="176" r="5" fill="#ffffff"/>
+      <circle cx="181" cy="176" r="5" fill="#ffffff"/>
+    `
+  },
+  {
+    id: 'balloon', name: 'Balloon', emoji: '🎈',
+    svg: `
+      <rect width="400" height="400" fill="#bbdefb"/>
+      <circle cx="54" cy="52" r="28" fill="#fff176"/>
+      <ellipse cx="76" cy="124" rx="52" ry="26" fill="#ffffff"/>
+      <ellipse cx="118" cy="136" rx="36" ry="20" fill="#ffffff"/>
+      <ellipse cx="344" cy="86" rx="46" ry="24" fill="#ffffff"/>
+      <ellipse cx="356" cy="214" rx="40" ry="22" fill="#ffffff"/>
+      <path d="M0 356c58-34 116 8 196-10 70-16 146 22 204-8v62H0z" fill="#8bc34a"/>
+      <path d="M200 36C120 36 80 96 80 152c0 58 50 98 120 148 70-50 120-90 120-148 0-56-40-116-120-116z" fill="#e8473c"/>
+      <path d="M200 36c-48 0-72 60-72 116 0 58 30 98 72 148 42-50 72-90 72-148 0-56-24-116-72-116z" fill="#ffd54f"/>
+      <path d="M200 36c-22 0-34 60-34 116 0 58 16 98 34 148 18-50 34-90 34-148 0-56-12-116-34-116z" fill="#42a5f5"/>
+      <rect x="172" y="282" width="56" height="18" rx="9" fill="#5d4037"/>
+      <path d="M178 300l-8 22M222 300l8 22" fill="none" stroke="#5d4037" stroke-width="9" stroke-linecap="round"/>
+      <rect x="160" y="318" width="80" height="58" rx="12" fill="#a1887f"/>
+      <rect x="160" y="336" width="80" height="12" fill="#8d6e63"/>
+      <rect x="160" y="358" width="80" height="12" fill="#8d6e63"/>
+      <circle cx="200" cy="330" r="16" fill="#ffe0b2"/>
+      <circle cx="194" cy="328" r="4" fill="#2e2a26"/>
+      <circle cx="208" cy="328" r="4" fill="#2e2a26"/>
+      <circle cx="52" cy="352" r="14" fill="#fff59d"/>
+      <circle cx="348" cy="372" r="14" fill="#ef9a9a"/>
+    `
+  },
+  {
+    id: 'plane', name: 'Aeroplane', emoji: '✈️',
+    svg: `
+      <rect width="400" height="400" fill="#90caf9"/>
+      <circle cx="56" cy="56" r="30" fill="#fff176"/>
+      <ellipse cx="300" cy="66" rx="52" ry="26" fill="#ffffff"/>
+      <ellipse cx="256" cy="78" rx="34" ry="18" fill="#ffffff"/>
+      <ellipse cx="80" cy="306" rx="60" ry="28" fill="#ffffff"/>
+      <ellipse cx="124" cy="318" rx="40" ry="20" fill="#ffffff"/>
+      <ellipse cx="334" cy="340" rx="50" ry="24" fill="#ffffff"/>
+      <path d="M64 196L56 90h40l32 106z" fill="#e8473c"/>
+      <path d="M70 212L34 278h36l44-66z" fill="#c62828"/>
+      <ellipse cx="200" cy="200" rx="160" ry="54" fill="#f7f7f7"/>
+      <path d="M186 222l-48 102 150-44-50-58z" fill="#42a5f5"/>
+      <rect x="170" y="250" width="76" height="28" rx="14" fill="#546e7a"/>
+      <rect x="184" y="256" width="48" height="16" rx="8" fill="#b0bec5"/>
+      <rect x="86" y="206" width="250" height="18" rx="9" fill="#e8473c"/>
+      <circle cx="140" cy="184" r="15" fill="#4fc3f7"/>
+      <circle cx="186" cy="184" r="15" fill="#4fc3f7"/>
+      <circle cx="232" cy="184" r="15" fill="#4fc3f7"/>
+      <circle cx="278" cy="186" r="15" fill="#4fc3f7"/>
+      <path d="M298 168c28 4 46 14 56 26h-56z" fill="#4fc3f7"/>
+      <circle cx="350" cy="202" r="9" fill="#ffee58"/>
+    `
+  },
+  {
+    id: 'digger', name: 'Digger', emoji: '🚜',
+    svg: `
+      <rect width="400" height="400" fill="#cfe9ff"/>
+      <circle cx="52" cy="52" r="28" fill="#ffd54f"/>
+      <ellipse cx="312" cy="60" rx="44" ry="22" fill="#ffffff"/>
+      <ellipse cx="270" cy="72" rx="30" ry="16" fill="#ffffff"/>
+      <rect y="314" width="400" height="86" fill="#c5a35a"/>
+      <path d="M0 352c40-34 92-32 130 4z" fill="#a98743"/>
+      <path d="M268 358c34-40 92-42 132-6z" fill="#a98743"/>
+      <path d="M198 234l108-80" fill="none" stroke="#ef6c00" stroke-width="30" stroke-linecap="round"/>
+      <path d="M306 154l32 74" fill="none" stroke="#ef6c00" stroke-width="26" stroke-linecap="round"/>
+      <rect x="26" y="282" width="232" height="68" rx="34" fill="#37474f"/>
+      <circle cx="68" cy="316" r="21" fill="#90a4ae"/>
+      <circle cx="142" cy="316" r="21" fill="#90a4ae"/>
+      <circle cx="216" cy="316" r="21" fill="#90a4ae"/>
+      <rect x="54" y="198" width="176" height="92" rx="14" fill="#ffb300"/>
+      <rect x="208" y="166" width="20" height="38" rx="10" fill="#546e7a"/>
+      <rect x="60" y="134" width="104" height="72" rx="12" fill="#ffca28"/>
+      <rect x="76" y="150" width="74" height="44" rx="7" fill="#b3e5fc"/>
+      <rect x="66" y="226" width="60" height="18" rx="9" fill="#e65100"/>
+      <path d="M318 216l58 10-10 54c-34 2-54-18-48-64z" fill="#546e7a"/>
+      <path d="M320 272l12 20 10-18zM348 276l12 18 10-20z" fill="#37474f"/>
+      <circle cx="238" cy="206" r="10" fill="#ffee58"/>
+    `
+  },
+  {
+    id: 'robot', name: 'Robot', emoji: '🤖',
+    svg: `
+      <rect width="400" height="400" fill="#e8eaf6"/>
+      <circle cx="56" cy="62" r="28" fill="#c5cae9"/>
+      <circle cx="334" cy="80" r="32" fill="#c5cae9"/>
+      <circle cx="52" cy="258" r="22" fill="#c5cae9"/>
+      <rect y="334" width="400" height="66" fill="#9fa8da"/>
+      <rect x="192" y="40" width="16" height="46" fill="#546e7a"/>
+      <circle cx="200" cy="34" r="21" fill="#e8473c"/>
+      <rect x="90" y="110" width="22" height="50" rx="10" fill="#546e7a"/>
+      <rect x="288" y="110" width="22" height="50" rx="10" fill="#546e7a"/>
+      <rect x="112" y="78" width="176" height="130" rx="26" fill="#90a4ae"/>
+      <rect x="130" y="96" width="140" height="78" rx="14" fill="#263238"/>
+      <circle cx="166" cy="130" r="22" fill="#4fc3f7"/>
+      <circle cx="234" cy="130" r="22" fill="#4fc3f7"/>
+      <circle cx="171" cy="124" r="6" fill="#ffffff"/>
+      <circle cx="239" cy="124" r="6" fill="#ffffff"/>
+      <rect x="156" y="182" width="88" height="16" rx="8" fill="#37474f"/>
+      <rect x="178" y="204" width="44" height="26" fill="#607d8b"/>
+      <rect x="118" y="226" width="164" height="118" rx="20" fill="#78909c"/>
+      <path d="M282 242l54-44" fill="none" stroke="#607d8b" stroke-width="28" stroke-linecap="round"/>
+      <circle cx="346" cy="190" r="27" fill="#90a4ae"/>
+      <rect x="54" y="238" width="68" height="28" rx="14" fill="#607d8b"/>
+      <circle cx="50" cy="252" r="27" fill="#90a4ae"/>
+      <rect x="150" y="248" width="100" height="62" rx="12" fill="#cfd8dc"/>
+      <circle cx="176" cy="268" r="12" fill="#e8473c"/>
+      <circle cx="208" cy="268" r="12" fill="#ffd54f"/>
+      <circle cx="240" cy="268" r="12" fill="#66bb6a"/>
+      <rect x="166" y="290" width="68" height="14" rx="7" fill="#546e7a"/>
+      <rect x="140" y="338" width="36" height="36" fill="#607d8b"/>
+      <rect x="224" y="338" width="36" height="36" fill="#607d8b"/>
+      <rect x="118" y="366" width="76" height="28" rx="13" fill="#37474f"/>
+      <rect x="206" y="366" width="76" height="28" rx="13" fill="#37474f"/>
+    `
   }
 ];
 
