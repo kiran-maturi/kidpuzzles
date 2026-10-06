@@ -23,11 +23,15 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
       # The repo root is the site: plain HTML, CSS and ES modules, no build step.
-      - uses: actions/upload-pages-artifact@v3
+      # upload-pages-artifact drops dotfiles from v4 onwards; .nojekyll has to
+      # be asked for by name or it stops being published. (.git and .github are
+      # excluded regardless of this flag.)
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: .
+          include-hidden-files: true
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
